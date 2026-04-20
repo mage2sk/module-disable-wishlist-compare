@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Panth Disable Wishlist & Compare — Admin Menu
+ * Adds a direct link under Panth Infotech > Disable Wishlist & Compare
+ * that jumps straight to the module's system configuration section.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Panth_DisableWishlistCompare::config_link"
+             title="Disable Wishlist &amp; Compare"
+             module="Panth_DisableWishlistCompare"
+             sortOrder="50"
+             parent="Panth_Core::panth_extensions"
+             action="adminhtml/system_config/edit/section/panth_disable_wc"
+             resource="Panth_DisableWishlistCompare::config"/>
+    </menu>
+</config>

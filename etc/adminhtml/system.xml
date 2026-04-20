@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="panth_infotech" translate="label" sortOrder="999">
-            <label>Panth Infotech</label>
-        </tab>
+        <!-- Tab is declared by Panth_Core as `panth` with label "🚀 Panth Extensions" -->
         <section id="panth_disable_wc" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Disable Wishlist &amp; Compare</label>
-            <tab>panth_infotech</tab>
+            <tab>panth</tab>
             <resource>Panth_DisableWishlistCompare::config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>

@@ -4,6 +4,28 @@ All notable changes to this extension are documented here. The format is
 based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this
 project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.1]
+
+### Fixed
+- **Admin-config section now appears in the same Panth Infotech tab as
+  the rest of the Panth modules.** v1.0.0 declared its own
+  `panth_infotech` tab with sortOrder 999, which pushed it to the bottom
+  of the admin nav away from all the other Panth_* modules. Switched to
+  the shared `panth` tab declared by `Panth_Core` so it sits alongside
+  Core, Extra Fee, AdvancedSEO, and the rest.
+- **Added `etc/adminhtml/menu.xml`** with a direct link under
+  *Panth Infotech → Disable Wishlist & Compare* that jumps straight to
+  the config section. Matches the menu pattern every other Panth_*
+  module uses.
+
+### Added
+- **`Panth_Core` as a required dependency** (`mage2kishan/module-core: ^1.0`).
+  Needed because the shared `panth` admin tab and the
+  `Panth_Core::panth_extensions` menu parent are both declared by
+  Panth_Core. Module sequence and composer require updated.
+- **Admin-configuration screenshot** (`docs/admin-configuration.png`) and
+  a Preview section in the README showing the four toggles.
+
 ## [1.0.0] — Initial release
 
 ### Added
