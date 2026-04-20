@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Hyva's product-list-item card. These JS blocks emit the Alpine
+             addToWishlist() / addToCompare() helpers into the footer. The
+             visible buttons are already removed via the catalog/search
+             handles — this strips the leftover JS helpers too. -->
+        <referenceBlock name="category.products.list.js.wishlist" remove="true"/>
+        <referenceBlock name="category.products.list.js.compare" remove="true"/>
+        <!-- The card's own wishlist button, rendered per item -->
+        <referenceBlock name="catalog.list.item.wishlist" remove="true"/>
+    </body>
+</page>

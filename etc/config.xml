@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <panth_disable_wc>
+            <general>
+                <enabled>1</enabled>
+                <disable_wishlist>1</disable_wishlist>
+                <disable_compare>1</disable_compare>
+                <block_routes>1</block_routes>
+            </general>
+        </panth_disable_wc>
+    </default>
+</config>

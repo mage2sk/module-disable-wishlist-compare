@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- ================ WISHLIST ================ -->
+        <!-- Core header + sidebar + Luma top-link -->
+        <referenceBlock name="wish-list-link" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="wishlist_link" remove="true"/>
+        <!-- Customer-account side nav tab -->
+        <referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/>
+
+        <!-- ================ COMPARE ================ -->
+        <!-- Core compare sidebar + core header link -->
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <!-- Hyva header compare icon block -->
+        <referenceBlock name="header-compare" remove="true"/>
+
+        <!-- Hyva header template calls getChildHtml('compare') / ('wishlist')
+             inside `if ($showCompare)` / `if ($showWishlist)` guards. Force
+             both arguments on the parent header-content block to false so
+             the whole branch is skipped even when the child block removal
+             above didn't reach the template in the expected order. -->
+        <referenceBlock name="header-content">
+            <arguments>
+                <argument name="show_compare" xsi:type="boolean">false</argument>
+                <argument name="show_wishlist" xsi:type="boolean">false</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

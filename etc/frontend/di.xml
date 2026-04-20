@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Helper-level gate: Magento core + third-party UI checks isAllow()
+         here; killing it removes the bulk of wishlist UI on every theme. -->
+    <type name="Magento\Wishlist\Helper\Data">
+        <plugin name="panth_disable_wc_wishlist_helper"
+                type="Panth\DisableWishlistCompare\Plugin\Helper\WishlistHelperPlugin"
+                sortOrder="10"/>
+    </type>
+
+    <!-- Controller gate: 404 every /wishlist/* request. Covers Index, Add,
+         Remove, Update, Cart, Fromcart, Configure, UpdateItemOptions, Share,
+         Send — they all extend Magento\Wishlist\Controller\AbstractIndex. -->
+    <type name="Magento\Wishlist\Controller\AbstractIndex">
+        <plugin name="panth_disable_wc_wishlist_controller"
+                type="Panth\DisableWishlistCompare\Plugin\Controller\DisableWishlistController"
+                sortOrder="10"/>
+    </type>
+
+    <!-- Controller gate: 404 every /catalog/product_compare/* request.
+         Covers Index, Add, Remove, Clear — they all extend
+         Magento\Catalog\Controller\Product\Compare. -->
+    <type name="Magento\Catalog\Controller\Product\Compare">
+        <plugin name="panth_disable_wc_compare_controller"
+                type="Panth\DisableWishlistCompare\Plugin\Controller\DisableCompareController"
+                sortOrder="10"/>
+    </type>
+
+    <!-- Hyva view-model gates. Harmless on Luma-only stores: Magento's
+         plugin runtime skips plugin declarations whose target class is
+         not loaded. -->
+    <type name="Hyva\Theme\ViewModel\Wishlist">
+        <plugin name="panth_disable_wc_hyva_wishlist_vm"
+                type="Panth\DisableWishlistCompare\Plugin\Hyva\WishlistViewModelPlugin"
+                sortOrder="10"/>
+    </type>
+    <type name="Hyva\Theme\ViewModel\ProductCompare">
+        <plugin name="panth_disable_wc_hyva_compare_vm"
+                type="Panth\DisableWishlistCompare\Plugin\Hyva\ProductCompareViewModelPlugin"
+                sortOrder="10"/>
+    </type>
+
+    <!-- Luma widgets (new_grid.phtml, new_list.phtml, listing.phtml) hardcode
+         $showCompare=true in the template and test $block->getAddToCompareUrl()
+         directly — the only universal way to suppress those compare/wishlist
+         links without patching core templates is to empty the URL at the
+         block level. Covers every Luma product-listing widget. -->
+    <type name="Magento\Catalog\Block\Product\AbstractProduct">
+        <plugin name="panth_disable_wc_block_compare_wishlist_url"
+                type="Panth\DisableWishlistCompare\Plugin\Block\CompareLinkBlockPlugin"
+                sortOrder="10"/>
+    </type>
+</config>

@@ -1,0 +1,30 @@
+{
+    "name": "mage2kishan/module-disable-wishlist-compare",
+    "description": "Disable Wishlist and Compare functionality across the entire Magento 2 frontend (works on Hyva and Luma).",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "keywords": [
+        "magento2",
+        "magento2-module",
+        "wishlist",
+        "compare",
+        "disable",
+        "hyva",
+        "luma"
+    ],
+    "require": {
+        "php": "~8.1.0||~8.2.0||~8.3.0||~8.4.0",
+        "magento/framework": "^103.0",
+        "magento/module-catalog": "^104.0",
+        "magento/module-wishlist": "^101.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Panth\\DisableWishlistCompare\\": ""
+        }
+    }
+}
