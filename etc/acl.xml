@@ -11,13 +11,6 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <!-- Link under Panth Infotech parent (declared by Panth_Core) -->
-                <resource id="Panth_Core::panth_extensions">
-                    <resource id="Panth_DisableWishlistCompare::config"
-                              title="Disable Wishlist &amp; Compare"
-                              sortOrder="50"/>
-                </resource>
-
                 <!-- System Configuration Access -->
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
