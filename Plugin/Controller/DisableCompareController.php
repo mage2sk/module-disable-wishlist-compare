@@ -9,11 +9,6 @@ use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Exception\NotFoundException;
 use Panth\DisableWishlistCompare\Helper\Config;
 
-/**
- * 404 every /catalog/product_compare/* URL when compare is disabled.
- * Applied to Magento\Catalog\Controller\Product\Compare so it covers
- * Index, Add, Remove, Clear — i.e. all compare action controllers.
- */
 class DisableCompareController
 {
     public function __construct(
@@ -23,10 +18,6 @@ class DisableCompareController
     ) {
     }
 
-    /**
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
-     * @throws NotFoundException
-     */
     public function aroundExecute(ActionInterface $subject, callable $proceed)
     {
         if (!$this->config->isRouteBlockingEnabled() || !$this->config->isCompareDisabled()) {
