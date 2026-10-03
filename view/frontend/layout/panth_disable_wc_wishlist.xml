@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="wish-list-link" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="wishlist_link" remove="true"/>
+        <referenceBlock name="customer-account-navigation-wish-list-link" remove="true"/>
+        <referenceBlock name="customer.header.wishlist.link" remove="true"/>
+        <referenceBlock name="header.content.wishlist" remove="true"/>
+        <referenceBlock name="header-content">
+            <arguments>
+                <argument name="show_wishlist" xsi:type="boolean">false</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="view.addto.wishlist" remove="true"/>
+        <referenceBlock name="related.product.addto.wishlist" remove="true"/>
+        <referenceBlock name="upsell.product.addto.wishlist" remove="true"/>
+        <referenceBlock name="crosssell.product.addto.wishlist" remove="true"/>
+        <referenceBlock name="catalogsearch.product.addto.wishlist" remove="true"/>
+        <referenceBlock name="view.addto.wishlist.bundle" remove="true"/>
+
+        <referenceBlock name="category.product.addto.wishlist" remove="true"/>
+        <referenceBlock name="category.product.list.additional.wishlist_addto" remove="true"/>
+        <referenceBlock name="category.products.list.js.wishlist" remove="true"/>
+        <referenceBlock name="catalog.list.item.wishlist" remove="true"/>
+        <referenceBlock name="search.result.list.js.wishlist" remove="true"/>
+
+        <referenceBlock name="checkout.cart.item.renderers.default.actions.move_to_wishlist" remove="true"/>
+        <referenceBlock name="checkout.cart.item.renderers.simple.actions.move_to_wishlist" remove="true"/>
+        <referenceBlock name="checkout.cart.item.renderers.bundle.actions.move_to_wishlist" remove="true"/>
+        <referenceBlock name="checkout.cart.item.renderers.downloadable.actions.move_to_wishlist" remove="true"/>
+        <referenceBlock name="checkout.cart.item.renderers.grouped.actions.move_to_wishlist" remove="true"/>
+        <referenceBlock name="checkout.cart.item.renderers.configurable.actions.move_to_wishlist" remove="true"/>
+        <referenceBlock name="checkout.cart.item.renderers.virtual.actions.move_to_wishlist" remove="true"/>
+    </body>
+</page>
